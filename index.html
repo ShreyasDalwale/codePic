@@ -1,729 +1,669 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>codePic - Shreyas Dalwale</title>
-
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="description" content="Create awesome images of your code with codePic.">
-    <meta name="author" content="Shreyas Dalwale">
-
-    <!-- Core -->
-    <link rel="stylesheet" href="lib/codemirror.css">
-
-    <!-- Themes -->
-    <link rel="stylesheet" href="theme/3024-day.css">
-    <link rel="stylesheet" href="theme/3024-night.css">
-    <link rel="stylesheet" href="theme/abcdef.css">
-    <link rel="stylesheet" href="theme/ambiance.css">
-    <link rel="stylesheet" href="theme/ayu-dark.css">
-    <link rel="stylesheet" href="theme/ayu-mirage.css">
-    <link rel="stylesheet" href="theme/base16-dark.css">
-    <link rel="stylesheet" href="theme/bespin.css">
-    <link rel="stylesheet" href="theme/base16-light.css">
-    <link rel="stylesheet" href="theme/blackboard.css">
-    <link rel="stylesheet" href="theme/cobalt.css">
-    <link rel="stylesheet" href="theme/colorforth.css">
-    <link rel="stylesheet" href="theme/dracula.css">
-    <link rel="stylesheet" href="theme/duotone-dark.css">
-    <link rel="stylesheet" href="theme/duotone-light.css">
-    <link rel="stylesheet" href="theme/eclipse.css">
-    <link rel="stylesheet" href="theme/elegant.css">
-    <link rel="stylesheet" href="theme/erlang-dark.css">
-    <link rel="stylesheet" href="theme/gruvbox-dark.css">
-    <link rel="stylesheet" href="theme/hopscotch.css">
-    <link rel="stylesheet" href="theme/icecoder.css">
-    <link rel="stylesheet" href="theme/isotope.css">
-    <link rel="stylesheet" href="theme/lesser-dark.css">
-    <link rel="stylesheet" href="theme/liquibyte.css">
-    <link rel="stylesheet" href="theme/lucario.css">
-    <link rel="stylesheet" href="theme/material.css">
-    <link rel="stylesheet" href="theme/material-darker.css">
-    <link rel="stylesheet" href="theme/material-palenight.css">
-    <link rel="stylesheet" href="theme/material-ocean.css">
-    <link rel="stylesheet" href="theme/mbo.css">
-    <link rel="stylesheet" href="theme/mdn-like.css">
-    <link rel="stylesheet" href="theme/midnight.css">
-    <link rel="stylesheet" href="theme/monokai.css">
-    <link rel="stylesheet" href="theme/moxer.css">
-    <link rel="stylesheet" href="theme/neat.css">
-    <link rel="stylesheet" href="theme/neo.css">
-    <link rel="stylesheet" href="theme/night.css">
-    <link rel="stylesheet" href="theme/nord.css">
-    <link rel="stylesheet" href="theme/oceanic-next.css">
-    <link rel="stylesheet" href="theme/panda-syntax.css">
-    <link rel="stylesheet" href="theme/paraiso-dark.css">
-    <link rel="stylesheet" href="theme/paraiso-light.css">
-    <link rel="stylesheet" href="theme/pastel-on-dark.css">
-    <link rel="stylesheet" href="theme/railscasts.css">
-    <link rel="stylesheet" href="theme/rubyblue.css">
-    <link rel="stylesheet" href="theme/seti.css">
-    <link rel="stylesheet" href="theme/shadowfox.css">
-    <link rel="stylesheet" href="theme/solarized.css">
-    <link rel="stylesheet" href="theme/the-matrix.css">
-    <link rel="stylesheet" href="theme/tomorrow-night-bright.css">
-    <link rel="stylesheet" href="theme/tomorrow-night-eighties.css">
-    <link rel="stylesheet" href="theme/ttcn.css">
-    <link rel="stylesheet" href="theme/twilight.css">
-    <link rel="stylesheet" href="theme/vibrant-ink.css">
-    <link rel="stylesheet" href="theme/xq-dark.css">
-    <link rel="stylesheet" href="theme/xq-light.css">
-    <link rel="stylesheet" href="theme/yeti.css">
-    <link rel="stylesheet" href="theme/idea.css">
-    <link rel="stylesheet" href="theme/darcula.css">
-    <link rel="stylesheet" href="theme/yonce.css">
-    <link rel="stylesheet" href="theme/zenburn.css">
-
-    <link rel="stylesheet" href="mcss/halfmoon.min.css">
-    <link rel="stylesheet" href="mcss/halfmoon-variables.css">
-
-
-
-
-    <link rel="stylesheet" href="addon/fold/foldgutter.css" />
-
-    <script src="lib/codemirror.js"></script>
-<!-- 
-    <script src="mode/javascript/javascript.js"></script>
-    <script src="mode/xml/xml.js"></script>
-    <script src="mode/javascript/javascript.js"></script>
-    <script src="mode/css/css.js"></script>
-    <script src="mode/python/python.js"></script>
-    <script src="mode/htmlmixed/htmlmixed.js"></script>
- -->
-
-
-    <script src ="mode/apl/apl.js"></script>
-    <script src ="mode/asciiarmor/asciiarmor.js"></script>
-    <script src ="mode/asn.1/asn.1.js"></script>
-    <script src ="mode/asterisk/asterisk.js"></script>
-    <script src ="mode/brainfuck/brainfuck.js"></script>
-    <script src ="mode/clike/clike.js"></script>
-    <script src ="mode/clojure/clojure.js"></script>
-    <script src ="mode/cmake/cmake.js"></script>
-    <script src ="mode/cobol/cobol.js"></script>
-    <script src ="mode/coffeescript/coffeescript.js"></script>
-    <script src ="mode/commonlisp/commonlisp.js"></script>
-    <script src ="mode/crystal/crystal.js"></script>
-    <script src ="mode/css/css.js"></script>
-    <script src ="mode/cypher/cypher.js"></script>
-    <script src ="mode/d/d.js"></script>
-    <script src ="mode/dart/dart.js"></script>
-    <script src ="mode/diff/diff.js"></script>
-    <script src ="mode/django/django.js"></script>
-    <script src ="mode/dockerfile/dockerfile.js"></script>
-    <script src ="mode/dtd/dtd.js"></script>
-    <script src ="mode/dylan/dylan.js"></script>
-    <script src ="mode/ebnf/ebnf.js"></script>
-    <script src ="mode/ecl/ecl.js"></script>
-    <script src ="mode/eiffel/eiffel.js"></script>
-    <script src ="mode/elm/elm.js"></script>
-    <script src ="mode/erlang/erlang.js"></script>
-    <script src ="mode/factor/factor.js"></script>
-    <script src ="mode/fcl/fcl.js"></script>
-    <script src ="mode/forth/forth.js"></script>
-    <script src ="mode/fortran/fortran.js"></script>
-    <script src ="mode/gas/gas.js"></script>
-    <script src ="mode/gfm/gfm.js"></script>
-    <script src ="mode/gherkin/gherkin.js"></script>
-    <script src ="mode/go/go.js"></script>
-    <script src ="mode/groovy/groovy.js"></script>
-    <script src ="mode/haml/haml.js"></script>
-    <script src ="mode/handlebars/handlebars.js"></script>
-    <script src ="mode/haskell/haskell.js"></script>
-    <script src ="mode/haskell-literate/haskell-literate.js"></script>
-    <script src ="mode/haxe/haxe.js"></script>
-    <script src ="mode/htmlembedded/htmlembedded.js"></script>
-    <script src ="mode/htmlmixed/htmlmixed.js"></script>
-    <script src ="mode/http/http.js"></script>
-    <script src ="mode/idl/idl.js"></script>
-    <script src ="mode/javascript/javascript.js"></script>
-    <script src ="mode/jinja2/jinja2.js"></script>
-    <script src ="mode/jsx/jsx.js"></script>
-    <script src ="mode/julia/julia.js"></script>
-    <script src ="mode/livescript/livescript.js"></script>
-    <script src ="mode/lua/lua.js"></script>
-    <script src ="mode/markdown/markdown.js"></script>
-    <script src ="mode/mathematica/mathematica.js"></script>
-    <script src ="mode/mbox/mbox.js"></script>
-    <script src ="mode/mirc/mirc.js"></script>
-    <script src ="mode/mllike/mllike.js"></script>
-    <script src ="mode/modelica/modelica.js"></script>
-    <script src ="mode/mscgen/mscgen.js"></script>
-    <script src ="mode/mumps/mumps.js"></script>
-    <script src ="mode/nginx/nginx.js"></script>
-    <script src ="mode/nsis/nsis.js"></script>
-    <script src ="mode/ntriples/ntriples.js"></script>
-    <script src ="mode/octave/octave.js"></script>
-    <script src ="mode/oz/oz.js"></script>
-    <script src ="mode/pascal/pascal.js"></script>
-    <script src ="mode/pegjs/pegjs.js"></script>
-    <script src ="mode/perl/perl.js"></script>
-    <script src ="mode/php/php.js"></script>
-    <script src ="mode/pig/pig.js"></script>
-    <script src ="mode/powershell/powershell.js"></script>
-    <script src ="mode/properties/properties.js"></script>
-    <script src ="mode/protobuf/protobuf.js"></script>
-    <script src ="mode/pug/pug.js"></script>
-    <script src ="mode/puppet/puppet.js"></script>
-    <script src ="mode/python/python.js"></script>
-    <script src ="mode/q/q.js"></script>
-    <script src ="mode/r/r.js"></script>
-    <script src ="mode/rpm/rpm.js"></script>
-    <script src ="mode/rst/rst.js"></script>
-    <script src ="mode/ruby/ruby.js"></script>
-    <script src ="mode/rust/rust.js"></script>
-    <script src ="mode/sas/sas.js"></script>
-    <script src ="mode/sass/sass.js"></script>
-    <script src ="mode/scheme/scheme.js"></script>
-    <script src ="mode/shell/shell.js"></script>
-    <script src ="mode/sieve/sieve.js"></script>
-    <script src ="mode/slim/slim.js"></script>
-    <script src ="mode/smalltalk/smalltalk.js"></script>
-    <script src ="mode/smarty/smarty.js"></script>
-    <script src ="mode/solr/solr.js"></script>
-    <script src ="mode/soy/soy.js"></script>
-    <script src ="mode/sparql/sparql.js"></script>
-    <script src ="mode/spreadsheet/spreadsheet.js"></script>
-    <script src ="mode/sql/sql.js"></script>
-    <script src ="mode/stex/stex.js"></script>
-    <script src ="mode/stylus/stylus.js"></script>
-    <script src ="mode/swift/swift.js"></script>
-    <script src ="mode/tcl/tcl.js"></script>
-    <script src ="mode/textile/textile.js"></script>
-    <script src ="mode/tiddlywiki/tiddlywiki.js"></script>
-    <script src ="mode/tiki/tiki.js"></script>
-    <script src ="mode/toml/toml.js"></script>
-    <script src ="mode/tornado/tornado.js"></script>
-    <script src ="mode/troff/troff.js"></script>
-    <script src ="mode/ttcn/ttcn.js"></script>
-    <script src ="mode/ttcn-cfg/ttcn-cfg.js"></script>
-    <script src ="mode/turtle/turtle.js"></script>
-    <script src ="mode/twig/twig.js"></script>
-    <script src ="mode/vb/vb.js"></script>
-    <script src ="mode/vbscript/vbscript.js"></script>
-    <script src ="mode/velocity/velocity.js"></script>
-    <script src ="mode/verilog/verilog.js"></script>
-    <script src ="mode/vhdl/vhdl.js"></script>
-    <script src ="mode/vue/vue.js"></script>
-    <script src ="mode/wast/wast.js"></script>
-    <script src ="mode/webidl/webidl.js"></script>
-    <script src ="mode/xml/xml.js"></script>
-    <script src ="mode/xquery/xquery.js"></script>
-    <script src ="mode/yacas/yacas.js"></script>
-    <script src ="mode/yaml/yaml.js"></script>
-    <script src ="mode/yaml-frontmatter/yaml-frontmatter.js"></script>
-    <script src ="mode/z80/z80.js"></script>
-
-
-
-
-
-
-
-
-    <script src="addon/selection/active-line.js"></script>
-    <script src="addon/edit/matchbrackets.js"></script>
-    <script src="addon/edit/closebrackets.js"></script>
-
-    <script src="addon/edit/closetag.js"></script>
-    <script src="addon/fold/xml-fold.js"></script>
-
-    <script src="addon/search/searchcursor.js"></script>
-    <script src="addon/search/match-highlighter.js"></script>
-
-    <script src="addon/fold/foldcode.js"></script>
-    <script src="addon/fold/foldgutter.js"></script>
-    <script src="addon/fold/brace-fold.js"></script>
-    <script src="addon/fold/xml-fold.js"></script>
-    <script src="addon/fold/indent-fold.js"></script>
-    <script src="addon/fold/markdown-fold.js"></script>
-    <script src="addon/fold/markdown-fold.js"></script>
-    <script src="addon/mode/overlay.js"></script>
-    <script src="addon/mode/multiplex.js"></script>
-
-    <script src="mjs/html2canvas.min.js"></script>
-    <script src="mjs/FileSaver.js"></script>
-
-    <style type="text/css">
+    <head>
+        <title>codePic - Shreyas Dalwale</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Create awesome images of your code with codePic.">
+        <meta name="author" content="Shreyas Dalwale">
+        <!-- Core -->
+        <link rel="stylesheet" href="lib/codemirror.css">
+        <!-- Themes -->
+        <link rel="stylesheet" href="theme/3024-day.css">
+        <link rel="stylesheet" href="theme/3024-night.css">
+        <link rel="stylesheet" href="theme/abcdef.css">
+        <link rel="stylesheet" href="theme/ambiance.css">
+        <link rel="stylesheet" href="theme/ayu-dark.css">
+        <link rel="stylesheet" href="theme/ayu-mirage.css">
+        <link rel="stylesheet" href="theme/base16-dark.css">
+        <link rel="stylesheet" href="theme/bespin.css">
+        <link rel="stylesheet" href="theme/base16-light.css">
+        <link rel="stylesheet" href="theme/blackboard.css">
+        <link rel="stylesheet" href="theme/cobalt.css">
+        <link rel="stylesheet" href="theme/colorforth.css">
+        <link rel="stylesheet" href="theme/dracula.css">
+        <link rel="stylesheet" href="theme/duotone-dark.css">
+        <link rel="stylesheet" href="theme/duotone-light.css">
+        <link rel="stylesheet" href="theme/eclipse.css">
+        <link rel="stylesheet" href="theme/elegant.css">
+        <link rel="stylesheet" href="theme/erlang-dark.css">
+        <link rel="stylesheet" href="theme/gruvbox-dark.css">
+        <link rel="stylesheet" href="theme/hopscotch.css">
+        <link rel="stylesheet" href="theme/icecoder.css">
+        <link rel="stylesheet" href="theme/isotope.css">
+        <link rel="stylesheet" href="theme/lesser-dark.css">
+        <link rel="stylesheet" href="theme/liquibyte.css">
+        <link rel="stylesheet" href="theme/lucario.css">
+        <link rel="stylesheet" href="theme/material.css">
+        <link rel="stylesheet" href="theme/material-darker.css">
+        <link rel="stylesheet" href="theme/material-palenight.css">
+        <link rel="stylesheet" href="theme/material-ocean.css">
+        <link rel="stylesheet" href="theme/mbo.css">
+        <link rel="stylesheet" href="theme/mdn-like.css">
+        <link rel="stylesheet" href="theme/midnight.css">
+        <link rel="stylesheet" href="theme/monokai.css">
+        <link rel="stylesheet" href="theme/moxer.css">
+        <link rel="stylesheet" href="theme/neat.css">
+        <link rel="stylesheet" href="theme/neo.css">
+        <link rel="stylesheet" href="theme/night.css">
+        <link rel="stylesheet" href="theme/nord.css">
+        <link rel="stylesheet" href="theme/oceanic-next.css">
+        <link rel="stylesheet" href="theme/panda-syntax.css">
+        <link rel="stylesheet" href="theme/paraiso-dark.css">
+        <link rel="stylesheet" href="theme/paraiso-light.css">
+        <link rel="stylesheet" href="theme/pastel-on-dark.css">
+        <link rel="stylesheet" href="theme/railscasts.css">
+        <link rel="stylesheet" href="theme/rubyblue.css">
+        <link rel="stylesheet" href="theme/seti.css">
+        <link rel="stylesheet" href="theme/shadowfox.css">
+        <link rel="stylesheet" href="theme/solarized.css">
+        <link rel="stylesheet" href="theme/the-matrix.css">
+        <link rel="stylesheet" href="theme/tomorrow-night-bright.css">
+        <link rel="stylesheet" href="theme/tomorrow-night-eighties.css">
+        <link rel="stylesheet" href="theme/ttcn.css">
+        <link rel="stylesheet" href="theme/twilight.css">
+        <link rel="stylesheet" href="theme/vibrant-ink.css">
+        <link rel="stylesheet" href="theme/xq-dark.css">
+        <link rel="stylesheet" href="theme/xq-light.css">
+        <link rel="stylesheet" href="theme/yeti.css">
+        <link rel="stylesheet" href="theme/idea.css">
+        <link rel="stylesheet" href="theme/darcula.css">
+        <link rel="stylesheet" href="theme/yonce.css">
+        <link rel="stylesheet" href="theme/zenburn.css">
+        <link rel="stylesheet" href="mcss/halfmoon.min.css">
+        <link rel="stylesheet" href="mcss/halfmoon-variables.css">
+        <link rel="stylesheet" href="addon/fold/foldgutter.css" />
+        <script src="lib/codemirror.js"></script>
+        <!--
+        <script src="mode/javascript/javascript.js"></script>
+        <script src="mode/xml/xml.js"></script>
+        <script src="mode/javascript/javascript.js"></script>
+        <script src="mode/css/css.js"></script>
+        <script src="mode/python/python.js"></script>
+        <script src="mode/htmlmixed/htmlmixed.js"></script>
+        -->
+        <script src ="mode/apl/apl.js"></script>
+        <script src ="mode/asciiarmor/asciiarmor.js"></script>
+        <script src ="mode/asn.1/asn.1.js"></script>
+        <script src ="mode/asterisk/asterisk.js"></script>
+        <script src ="mode/brainfuck/brainfuck.js"></script>
+        <script src ="mode/clike/clike.js"></script>
+        <script src ="mode/clojure/clojure.js"></script>
+        <script src ="mode/cmake/cmake.js"></script>
+        <script src ="mode/cobol/cobol.js"></script>
+        <script src ="mode/coffeescript/coffeescript.js"></script>
+        <script src ="mode/commonlisp/commonlisp.js"></script>
+        <script src ="mode/crystal/crystal.js"></script>
+        <script src ="mode/css/css.js"></script>
+        <script src ="mode/cypher/cypher.js"></script>
+        <script src ="mode/d/d.js"></script>
+        <script src ="mode/dart/dart.js"></script>
+        <script src ="mode/diff/diff.js"></script>
+        <script src ="mode/django/django.js"></script>
+        <script src ="mode/dockerfile/dockerfile.js"></script>
+        <script src ="mode/dtd/dtd.js"></script>
+        <script src ="mode/dylan/dylan.js"></script>
+        <script src ="mode/ebnf/ebnf.js"></script>
+        <script src ="mode/ecl/ecl.js"></script>
+        <script src ="mode/eiffel/eiffel.js"></script>
+        <script src ="mode/elm/elm.js"></script>
+        <script src ="mode/erlang/erlang.js"></script>
+        <script src ="mode/factor/factor.js"></script>
+        <script src ="mode/fcl/fcl.js"></script>
+        <script src ="mode/forth/forth.js"></script>
+        <script src ="mode/fortran/fortran.js"></script>
+        <script src ="mode/gas/gas.js"></script>
+        <script src ="mode/gfm/gfm.js"></script>
+        <script src ="mode/gherkin/gherkin.js"></script>
+        <script src ="mode/go/go.js"></script>
+        <script src ="mode/groovy/groovy.js"></script>
+        <script src ="mode/haml/haml.js"></script>
+        <script src ="mode/handlebars/handlebars.js"></script>
+        <script src ="mode/haskell/haskell.js"></script>
+        <script src ="mode/haskell-literate/haskell-literate.js"></script>
+        <script src ="mode/haxe/haxe.js"></script>
+        <script src ="mode/htmlembedded/htmlembedded.js"></script>
+        <script src ="mode/htmlmixed/htmlmixed.js"></script>
+        <script src ="mode/http/http.js"></script>
+        <script src ="mode/idl/idl.js"></script>
+        <script src ="mode/javascript/javascript.js"></script>
+        <script src ="mode/jinja2/jinja2.js"></script>
+        <script src ="mode/jsx/jsx.js"></script>
+        <script src ="mode/julia/julia.js"></script>
+        <script src ="mode/livescript/livescript.js"></script>
+        <script src ="mode/lua/lua.js"></script>
+        <script src ="mode/markdown/markdown.js"></script>
+        <script src ="mode/mathematica/mathematica.js"></script>
+        <script src ="mode/mbox/mbox.js"></script>
+        <script src ="mode/mirc/mirc.js"></script>
+        <script src ="mode/mllike/mllike.js"></script>
+        <script src ="mode/modelica/modelica.js"></script>
+        <script src ="mode/mscgen/mscgen.js"></script>
+        <script src ="mode/mumps/mumps.js"></script>
+        <script src ="mode/nginx/nginx.js"></script>
+        <script src ="mode/nsis/nsis.js"></script>
+        <script src ="mode/ntriples/ntriples.js"></script>
+        <script src ="mode/octave/octave.js"></script>
+        <script src ="mode/oz/oz.js"></script>
+        <script src ="mode/pascal/pascal.js"></script>
+        <script src ="mode/pegjs/pegjs.js"></script>
+        <script src ="mode/perl/perl.js"></script>
+        <script src ="mode/php/php.js"></script>
+        <script src ="mode/pig/pig.js"></script>
+        <script src ="mode/powershell/powershell.js"></script>
+        <script src ="mode/properties/properties.js"></script>
+        <script src ="mode/protobuf/protobuf.js"></script>
+        <script src ="mode/pug/pug.js"></script>
+        <script src ="mode/puppet/puppet.js"></script>
+        <script src ="mode/python/python.js"></script>
+        <script src ="mode/q/q.js"></script>
+        <script src ="mode/r/r.js"></script>
+        <script src ="mode/rpm/rpm.js"></script>
+        <script src ="mode/rst/rst.js"></script>
+        <script src ="mode/ruby/ruby.js"></script>
+        <script src ="mode/rust/rust.js"></script>
+        <script src ="mode/sas/sas.js"></script>
+        <script src ="mode/sass/sass.js"></script>
+        <script src ="mode/scheme/scheme.js"></script>
+        <script src ="mode/shell/shell.js"></script>
+        <script src ="mode/sieve/sieve.js"></script>
+        <script src ="mode/slim/slim.js"></script>
+        <script src ="mode/smalltalk/smalltalk.js"></script>
+        <script src ="mode/smarty/smarty.js"></script>
+        <script src ="mode/solr/solr.js"></script>
+        <script src ="mode/soy/soy.js"></script>
+        <script src ="mode/sparql/sparql.js"></script>
+        <script src ="mode/spreadsheet/spreadsheet.js"></script>
+        <script src ="mode/sql/sql.js"></script>
+        <script src ="mode/stex/stex.js"></script>
+        <script src ="mode/stylus/stylus.js"></script>
+        <script src ="mode/swift/swift.js"></script>
+        <script src ="mode/tcl/tcl.js"></script>
+        <script src ="mode/textile/textile.js"></script>
+        <script src ="mode/tiddlywiki/tiddlywiki.js"></script>
+        <script src ="mode/tiki/tiki.js"></script>
+        <script src ="mode/toml/toml.js"></script>
+        <script src ="mode/tornado/tornado.js"></script>
+        <script src ="mode/troff/troff.js"></script>
+        <script src ="mode/ttcn/ttcn.js"></script>
+        <script src ="mode/ttcn-cfg/ttcn-cfg.js"></script>
+        <script src ="mode/turtle/turtle.js"></script>
+        <script src ="mode/twig/twig.js"></script>
+        <script src ="mode/vb/vb.js"></script>
+        <script src ="mode/vbscript/vbscript.js"></script>
+        <script src ="mode/velocity/velocity.js"></script>
+        <script src ="mode/verilog/verilog.js"></script>
+        <script src ="mode/vhdl/vhdl.js"></script>
+        <script src ="mode/vue/vue.js"></script>
+        <script src ="mode/wast/wast.js"></script>
+        <script src ="mode/webidl/webidl.js"></script>
+        <script src ="mode/xml/xml.js"></script>
+        <script src ="mode/xquery/xquery.js"></script>
+        <script src ="mode/yacas/yacas.js"></script>
+        <script src ="mode/yaml/yaml.js"></script>
+        <script src ="mode/yaml-frontmatter/yaml-frontmatter.js"></script>
+        <script src ="mode/z80/z80.js"></script>
+        <script src="addon/selection/active-line.js"></script>
+        <script src="addon/edit/matchbrackets.js"></script>
+        <script src="addon/edit/closebrackets.js"></script>
+        <script src="addon/edit/closetag.js"></script>
+        <script src="addon/fold/xml-fold.js"></script>
+        <script src="addon/search/searchcursor.js"></script>
+        <script src="addon/search/match-highlighter.js"></script>
+        <script src="addon/fold/foldcode.js"></script>
+        <script src="addon/fold/foldgutter.js"></script>
+        <script src="addon/fold/brace-fold.js"></script>
+        <script src="addon/fold/xml-fold.js"></script>
+        <script src="addon/fold/indent-fold.js"></script>
+        <script src="addon/fold/markdown-fold.js"></script>
+        <script src="addon/fold/markdown-fold.js"></script>
+        <script src="addon/mode/overlay.js"></script>
+        <script src="addon/mode/multiplex.js"></script>
+        <script src="mjs/html2canvas.min.js"></script>
+        <script src="mjs/FileSaver.js"></script>
+        
+        <style type="text/css">
         @font-face {
-            font-family: sansation;
-            src: url(./fonts/sansation_light.woff);
+        font-family: sansation;
+        src: url(./fonts/sansation_light.woff);
         }
-
         * {
-            /*font-family: sansation;*/
-            /*letter-spacing: 2px;*/
-
+        /*font-family: sansation;*/
+        /*letter-spacing: 2px;*/
         }
-
         .cm-matchhighlight {
-            background-color: #ffffff1a
+        background-color: #ffffff1a
         }
-
-
         .elevation {
-            border-radius: 35px;
-            -webkit-box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
-            -moz-box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
-            box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
+        border-radius: 35px;
+        -webkit-box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
+        -moz-box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
+        box-shadow: 0px 0px 10px 15px rgba(215, 215, 215, 1);
         }
-
         .codeContainer {
-            border-radius: 00px;
-            font-size: 18px;
-            min-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            margin: auto auto;
-            overflow: hidden;
-            /*resize: horizontal;*/
-            display: table;
-            /*padding: 0 5px 10px 5px ;*/
-            background-color: #151718;
+        border-radius: 00px;
+        font-size: 18px;
+        min-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin: auto auto;
+        overflow: hidden;
+        /*resize: horizontal;*/
+        display: table;
+        /*padding: 0 5px 10px 5px ;*/
+        background-color: #151718;
         }
-
-
         .green {
-            background: rgb(0, 255, 0)
+        background: rgb(0, 255, 0)
         }
-
         .red {
-            background: rgb(255, 0, 0)
+        background: rgb(255, 0, 0)
         }
-
         .yellow {
-            background: rgb(255, 255, 0)
+        background: rgb(255, 255, 0)
         }
-
         .button>div {
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            margin-right: 10px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        margin-right: 10px;
         }
-
         .button {
-            display: flex;
-            background-color: #0000;
-            float: left;
-            padding: 15px 0 10px 15px;
-            z-index: 5;
+        display: flex;
+        background-color: #0000;
+        float: left;
+        padding: 15px 0 10px 15px;
+        z-index: 5;
         }
-
         .title {
-            background-color: #0000;
-            /*background-color:  red;*/
-            /*line-height: 100%;*/
-            width: 100%;
-            color: white;
-            font-size: 0.8em;
-            text-align: center;
-            /*display: block;*/
-            margin-left: 0px;
-            padding: 0px 0 0 0;
-            border: none;
-
+        background-color: #0000;
+        /*background-color:  red;*/
+        /*line-height: 100%;*/
+        width: 100%;
+        color: white;
+        font-size: 0.8em;
+        text-align: center;
+        /*display: block;*/
+        margin-left: 0px;
+        padding: 0px 0 0 0;
+        border: none;
         }
-
         .title:focus,
         .tile:active {
-            border: none;
-            box-sizing: none;
-            outline: none;
+        border: none;
+        box-sizing: none;
+        outline: none;
         }
-
         div.custom-switch {
-            margin: 8px 0;
+        margin: 8px 0;
         }
-
         button {
-            margin: 5px;
+        margin: 5px;
         }
-
         .menu-icon {
-            border-radius:50%;
-          /*  width: 40px;
-            height: 40px;*/
-            margin: 0vh 0 0 10px;
-            position: absolute;
-            background: #ff0;
-            border: none;
-            z-index: 5;
-
+        border-radius:50%;
+        /*  width: 40px;
+        height: 40px;*/
+        margin: 0vh 0 0 10px;
+        position: absolute;
+        background: #ff0;
+        border: none;
+        z-index: 5;
         }
         .meu-icon:focus{
-            border: none;
-
+        border: none;
         }
-
         .menu-icon>img {
-            border: none;   
-            position: inherit;
-            border-radius: 50%
+        border: none;
+        position: inherit;
+        border-radius: 50%
         }
-
         .theme-icon {
-            height: 45px;
-            float: right;
-            width: 45px;
-            border-radius: 100px 100px;
-
+        height: 45px;
+        float: right;
+        width: 45px;
+        border-radius: 100px 100px;
         }
-
         .theme-icon>img {
-            width: 25px;
-            height: inherit;
+        width: 25px;
+        height: inherit;
         }
-
         #buttons-left {
-            visibility: hidden;
+        visibility: hidden;
         }
-
         #codeParent {
-            padding: 00px;
-            background: #fff0;
+        padding: 00px;
+        background: #fff0;
         }
-
-    </style>
-
-</head>
-
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-mode-theme-onload="false">
-
-    <div class="menu-icon" onclick="halfmoon.toggleSidebar()">
-        <img id="menuIcon" src="micons/menu.svg">
-    </div>
-
-
-    <div class="page-wrapper with-sidebar " data-sidebar-type="overlayed-sm-and-down">
-
-
-        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
-        <div class="sidebar">
-            <div class="menu-icon" style="margin: 10px 0 0 315px" onclick="halfmoon.toggleSidebar()">
-                <img id="menuIcon" src="micons/close.svg">
-            </div>
-
-            <div class="p-20">
-
-                <p>Select a theme
-                    <select class="form-control form-control-sm " onchange="selectTheme()" id=select>
-                        <!--<option selected>default</option>-->
-                        <option>3024-day</option>
-                        <option>3024-night</option>
-                        <option>abcdef</option>
-                        <option>ambiance</option>
-                        <option>ayu-dark</option>
-                        <option>ayu-mirage</option>
-                        <option>base16-dark</option>
-                        <option>base16-light</option>
-                        <option>bespin</option>
-                        <option>blackboard</option>
-                        <option>cobalt</option>
-                        <option>colorforth</option>
-                        <option>darcula</option>
-                        <option>dracula</option>
-                        <option>duotone-dark</option>
-                        <option>duotone-light</option>
-                        <option>eclipse</option>
-                        <option>elegant</option>
-                        <option>erlang-dark</option>
-                        <option>gruvbox-dark</option>
-                        <option>hopscotch</option>
-                        <option>icecoder</option>
-                        <option>idea</option>
-                        <option>isotope</option>
-                        <option>lesser-dark</option>
-                        <option>liquibyte</option>
-                        <option>lucario</option>
-                        <option>material</option>
-                        <option>material-darker</option>
-                        <option>material-palenight</option>
-                        <option>material-ocean</option>
-                        <option>mbo</option>
-                        <option>mdn-like</option>
-                        <option>midnight</option>
-                        <option>monokai</option>
-                        <option>moxer</option>
-                        <option>neat</option>
-                        <option>neo</option>
-                        <option>night</option>
-                        <option>nord</option>
-                        <option>oceanic-next</option>
-                        <option>panda-syntax</option>
-                        <option>paraiso-dark</option>
-                        <option>paraiso-light</option>
-                        <option>pastel-on-dark</option>
-                        <option>railscasts</option>
-                        <option>rubyblue</option>
-                        <option selected>seti</option>
-                        <option>shadowfox</option>
-                        <option>solarized dark</option>
-                        <option>solarized light</option>
-                        <option>the-matrix</option>
-                        <option>tomorrow-night-bright</option>
-                        <option>tomorrow-night-eighties</option>
-                        <option>ttcn</option>
-                        <option>twilight</option>
-                        <option>vibrant-ink</option>
-                        <option>xq-dark</option>
-                        <option>xq-light</option>
-                        <option>yeti</option>
-                        <option>yonce</option>
-                        <option>zenburn</option>
-                    </select>
-                </p>
-
-
- 
-                <p>Select Language
-                    <select class="form-control form-control-sm " onchange="selectLanguage()" id=selectLang>
-                        <!--<option selected>default</option>-->
-
-                        <option>apl</option>
-                        <option>asciiarmor</option>
-                        <option>asn.1</option>
-                        <option>asterisk</option>
-                        <option>brainfuck</option>
-                        <option>clojure</option>
-                        <option>c</option> <!-- mine -->
-                        <option>ceylon</option> <!-- mine -->
-                        <option>cmake</option>
-                        <option>cpp</option> <!-- mine -->
-                        <option>cobol</option>
-                        <option>coffeescript</option>
-                        <option>commonlisp</option>
-                        <option>crystal</option>
-                        <option>css</option>
-                        <option>cypher</option>
-                        <option>d</option>
-                        <option>dart</option>
-                        <option>diff</option>
-                        <option>django</option>
-                        <option>dockerfile</option>
-                        <option>dtd</option>
-                        <option>dylan</option>
-                        <option>ebnf</option>
-                        <option>ecl</option>
-                        <option>eiffel</option>
-                        <option>elm</option>
-                        <option>erlang</option>
-                        <option>factor</option>
-                        <option>fcl</option>
-                        <option>forth</option>
-                        <option>fortran</option>
-                        <option>gas</option>
-                        <option>gfm</option>
-                        <option>gherkin</option>
-                        <option>go</option>
-                        <option>groovy</option>
-                        <option>haml</option>
-                        <option>handlebars</option>
-                        <option>haskell</option>
-                        <option>haskell-literate</option>
-                        <option>haxe</option>
-                        <option>htmlembedded</option>
-                        <option>htmlmixed</option>
-                        <option>http</option>
-                        <option>idl</option>
-                        <option>java</option> <!-- mine -->
-                        <option>javascript</option>
-                        <option>jinja2</option>
-                        <option>jsx</option>
-                        <option>julia</option>
-                        <option>kotlin</option> <!-- mine -->
-                        <option>livescript</option>
-                        <option>lua</option>
-                        <option>markdown</option>
-                        <option>mathematica</option>
-                        <option>mbox</option>
-                        <option>mirc</option>
-                        <option>mllike</option>
-                        <option>modelica</option>
-                        <option>mscgen</option>
-                        <option>mumps</option>
-                        <option>nginx</option>
-                        <option>nsis</option>
-                        <option>ntriples</option>
-                        <option>objective-c</option> <!-- mine -->
-                        <option>octave</option>
-                        <option>oz</option>
-                        <option>pascal</option>
-                        <option>pegjs</option>
-                        <option>perl</option>
-                        <option>php</option>
-                        <option>pig</option>
-                        <option>powershell</option>
-                        <option>properties</option>
-                        <option>protobuf</option>
-                        <option>pug</option>
-                        <option>puppet</option>
-                        <option selected>python</option>
-                        <option>q</option>
-                        <option>r</option>
-                        <option>rpm</option>
-                        <option>rst</option>
-                        <option>ruby</option>
-                        <option>rust</option>
-                        <option>sas</option>
-                        <option>sass</option>
-                        <option>scala</option> <!-- mine -->
-                        <option>scheme</option>
-                        <option>shell</option>
-                        <option>sieve</option>
-                        <option>slim</option>
-                        <option>smalltalk</option>
-                        <option>smarty</option>
-                        <option>solr</option>
-                        <option>soy</option>
-                        <option>sparql</option>
-                        <option>spreadsheet</option>
-                        <option>sql</option>
-                        <option>stex</option>
-                        <option>stylus</option>
-                        <option>swift</option>
-                        <option>tcl</option>
-                        <option>textile</option>
-                        <option>tiddlywiki</option>
-                        <option>tiki</option>
-                        <option>toml</option>
-                        <option>tornado</option>
-                        <option>troff</option>
-                        <option>ttcn</option>
-                        <option>ttcn-cfg</option>
-                        <option>turtle</option>
-                        <option>twig</option>
-                        <option>vb</option>
-                        <option>vbscript</option>
-                        <option>velocity</option>
-                        <option>verilog</option>
-                        <option>vhdl</option>
-                        <option>vue</option>
-                        <option>wast</option>
-                        <option>webidl</option>
-                        <option>xml</option>
-                        <option>xquery</option>
-                        <option>yacas</option>
-                        <option>yaml</option>
-                        <option>yaml-frontmatter</option>
-                        <option>z80</option>
-
-
-                    </select>
-                </p>
-
-                <div class="custom-switch">
-                    <input  onclick="toggleLineNumbers(this)" type="checkbox" id="ln" checked onchange="">
-                    <label for="ln">Line Numbers</label>
-                </div>
-
-                <div class="custom-switch">
-                    <input onclick="toggleActiveLineFocus(this)" type="checkbox" id="alf">
-                    <label for="alf">Active Line Focus</label>
-                </div>
-
-
-                <div class="custom-switch">
-                    <input onclick="toggleLW(this)" type="checkbox" checked id="lw">
-                    <label for="lw">Line Wrapping</label>
-                </div>
-
-
-                <div class="custom-switch">
-                    <input onclick="toggleACB(this)" type="checkbox" checked id="acb">
-                    <label for="acb">Auto Close Brackets</label>
-                </div>
-
-
-
-                <div class="custom-switch">
-                    <input onclick="toggleFIG(this)" type="checkbox" id="fig">
-                    <label for="fig">Fold in Gutter</label>
-                </div>
-
-
-
-                <div class="custom-switch">
-                    <input onclick="toggleHMW(this)" type="checkbox" checked id="hmw">
-                    <label for="hmw">Highlight Matching Word</label>
-                </div>
-
-                
-                <div class="custom-switch">
-                    <input onclick="toggleHMB(this)" type="checkbox" checked id="hmb">
-                    <label for="hmb">Highlight Matching Brackets</label>
-                </div>
-
-                <div class="custom-switch">
-                    <input type="checkbox" id="bor" checked onclick="toggleBOR(this)">
-                    <label for="bor">Buttons on Right</label>
-                </div>
-
-
-
-                <label for="scaleF">Image Scale</label>
-                <input type="number" class="form-control form-control-sm" id="scaleF" value="5" /><br />
-
-            </div>
+        #resMes{
+        display: none;
+        z-index: 0;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background: #fff;
+        }
+        #resMes.p{
+        width: inherit;
+        text-align: center;
+        }
+        @media only screen and (max-width: 545px) {
+        #mainBlock{
+        display: none;
+        }
+        #resMes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        }
+        </style>
+    </head>
+    <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-mode-theme-onload="false" >
+        <div id="resMes" >
+            <p>Minimum resolution-width required is 550px...<br>
+            Try rotating your device to landscape...</p>
         </div>
-
-        <div class="content-wrapper">
-
-            
-
-            <div id="theme-moon" class="theme-icon p-0 m-0  bg-transparent" onclick="halfmoon.toggleDarkMode();hideMoon()">
-                <img src="micons/moon.svg">
+        <div id="mainBlock" style="background: #ffffff;z-index: 5">
+            <div class="menu-icon" onclick="halfmoon.toggleSidebar()">
+                <img id="menuIcon" src="micons/menu.svg">
             </div>
-
-            <div id="theme-sun" style="display: none" class="theme-icon p-0 m-0  bg-transparent" onclick='halfmoon.toggleDarkMode();hideSun()'>
-                <img src="micons/lsun2.svg">
-            </div>
-
-            <h2 class=" w-full" style="text-align: center;margin-top:0px;width: inherit">code<span style="color:#45A3FB">Pic</span></h2>
-
-            <div class="w-full  d-flex align-items-center justify-content-center">
-                <button class="btn btn-primary btn-sm " onclick="saveCodePic()">Save Image</button>
-                <button class="btn btn-primary btn-sm " onclick="saveText()">Save Code</button>
-                <button class="btn btn-primary btn-sm " onclick="writeCB()">Copy Code</button>
-            </div>
-            <div class="w-full  d-flex align-items-center justify-content-center">
-
-                <div class="content">
-                    <div id="codeParent">
-                        <div class="codeContainer" id="codeContainer">
-                            <div style="display: flex;">
-
-                                <div class="button" id="buttons-left">
-                                    <div class="red"></div>
-                                    <div class="green"></div>
-                                    <div class="yellow"></div>
-                                </div>
-
-                                <input type="text" class="title" id="titleField" value="FileName.py">
-
-                                <div class="button " id="buttons-right">
-                                    <div class="yellow"></div>
-                                    <div class="green"></div>
-                                    <div class="red"></div>
+            <div class="page-wrapper with-sidebar " data-sidebar-type="overlayed-sm-and-down">
+                <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+                <div class="sidebar">
+                    <!-- <div class="menu-icon" style="margin: 10px 0 0 315px" onclick="halfmoon.toggleSidebar()"> -->
+                    <div class="d-flex flex-row-reverse" style="width:inherit;padding: 5px 15px 0 0" onclick="halfmoon.toggleSidebar()">
+                        <img id="closeIcon" src="micons/lclose.svg">
+                    </div>
+                    <a href="#" class="sidebar-brand p-0 m-0 pl-20">
+                        <!-- <img src="..." alt="..."> -->
+                        Options
+                    </a>
+                    <div class="p-20 pt-0">
+                        <p>Select a theme
+                            <select class="form-control form-control-sm " onchange="selectTheme()" id=select>
+                                <!--<option selected>default</option>-->
+                                <option>3024-day</option>
+                                <option>3024-night</option>
+                                <option>abcdef</option>
+                                <option>ambiance</option>
+                                <option>ayu-dark</option>
+                                <option>ayu-mirage</option>
+                                <option>base16-dark</option>
+                                <option>base16-light</option>
+                                <option>bespin</option>
+                                <option>blackboard</option>
+                                <option>cobalt</option>
+                                <option>colorforth</option>
+                                <option>darcula</option>
+                                <option>dracula</option>
+                                <option>duotone-dark</option>
+                                <option>duotone-light</option>
+                                <option>eclipse</option>
+                                <option>elegant</option>
+                                <option>erlang-dark</option>
+                                <option>gruvbox-dark</option>
+                                <option>hopscotch</option>
+                                <option>icecoder</option>
+                                <option>idea</option>
+                                <option>isotope</option>
+                                <option>lesser-dark</option>
+                                <option>liquibyte</option>
+                                <option>lucario</option>
+                                <option>material</option>
+                                <option>material-darker</option>
+                                <option>material-palenight</option>
+                                <option>material-ocean</option>
+                                <option>mbo</option>
+                                <option>mdn-like</option>
+                                <option>midnight</option>
+                                <option>monokai</option>
+                                <option>moxer</option>
+                                <option>neat</option>
+                                <option>neo</option>
+                                <option>night</option>
+                                <option>nord</option>
+                                <option>oceanic-next</option>
+                                <option>panda-syntax</option>
+                                <option>paraiso-dark</option>
+                                <option>paraiso-light</option>
+                                <option>pastel-on-dark</option>
+                                <option>railscasts</option>
+                                <option>rubyblue</option>
+                                <option selected>seti</option>
+                                <option>shadowfox</option>
+                                <option>solarized dark</option>
+                                <option>solarized light</option>
+                                <option>the-matrix</option>
+                                <option>tomorrow-night-bright</option>
+                                <option>tomorrow-night-eighties</option>
+                                <option>ttcn</option>
+                                <option>twilight</option>
+                                <option>vibrant-ink</option>
+                                <option>xq-dark</option>
+                                <option>xq-light</option>
+                                <option>yeti</option>
+                                <option>yonce</option>
+                                <option>zenburn</option>
+                            </select>
+                        </p>
+                        
+                        <p>Select Language
+                            <select class="form-control form-control-sm " onchange="selectLanguage()" id=selectLang>
+                                <!--<option selected>default</option>-->
+                                <option>apl</option>
+                                <option>asciiarmor</option>
+                                <option>asn.1</option>
+                                <option>asterisk</option>
+                                <option>brainfuck</option>
+                                <option>clojure</option>
+                                <option>c</option> <!-- mine -->
+                                <option>ceylon</option> <!-- mine -->
+                                <option>cmake</option>
+                                <option>cpp</option> <!-- mine -->
+                                <option>cobol</option>
+                                <option>coffeescript</option>
+                                <option>commonlisp</option>
+                                <option>crystal</option>
+                                <option>css</option>
+                                <option>cypher</option>
+                                <option>d</option>
+                                <option>dart</option>
+                                <option>diff</option>
+                                <option>django</option>
+                                <option>dockerfile</option>
+                                <option>dtd</option>
+                                <option>dylan</option>
+                                <option>ebnf</option>
+                                <option>ecl</option>
+                                <option>eiffel</option>
+                                <option>elm</option>
+                                <option>erlang</option>
+                                <option>factor</option>
+                                <option>fcl</option>
+                                <option>forth</option>
+                                <option>fortran</option>
+                                <option>gas</option>
+                                <option>gfm</option>
+                                <option>gherkin</option>
+                                <option>go</option>
+                                <option>groovy</option>
+                                <option>haml</option>
+                                <option>handlebars</option>
+                                <option>haskell</option>
+                                <option>haskell-literate</option>
+                                <option>haxe</option>
+                                <option>htmlembedded</option>
+                                <option>htmlmixed</option>
+                                <option>http</option>
+                                <option>idl</option>
+                                <option>java</option> <!-- mine -->
+                                <option>javascript</option>
+                                <option>jinja2</option>
+                                <option>jsx</option>
+                                <option>julia</option>
+                                <option>kotlin</option> <!-- mine -->
+                                <option>livescript</option>
+                                <option>lua</option>
+                                <option>markdown</option>
+                                <option>mathematica</option>
+                                <option>mbox</option>
+                                <option>mirc</option>
+                                <option>mllike</option>
+                                <option>modelica</option>
+                                <option>mscgen</option>
+                                <option>mumps</option>
+                                <option>nginx</option>
+                                <option>nsis</option>
+                                <option>ntriples</option>
+                                <option>objective-c</option> <!-- mine -->
+                                <option>octave</option>
+                                <option>oz</option>
+                                <option>pascal</option>
+                                <option>pegjs</option>
+                                <option>perl</option>
+                                <option>php</option>
+                                <option>pig</option>
+                                <option>powershell</option>
+                                <option>properties</option>
+                                <option>protobuf</option>
+                                <option>pug</option>
+                                <option>puppet</option>
+                                <option selected>python</option>
+                                <option>q</option>
+                                <option>r</option>
+                                <option>rpm</option>
+                                <option>rst</option>
+                                <option>ruby</option>
+                                <option>rust</option>
+                                <option>sas</option>
+                                <option>sass</option>
+                                <option>scala</option> <!-- mine -->
+                                <option>scheme</option>
+                                <option>shell</option>
+                                <option>sieve</option>
+                                <option>slim</option>
+                                <option>smalltalk</option>
+                                <option>smarty</option>
+                                <option>solr</option>
+                                <option>soy</option>
+                                <option>sparql</option>
+                                <option>spreadsheet</option>
+                                <option>sql</option>
+                                <option>stex</option>
+                                <option>stylus</option>
+                                <option>swift</option>
+                                <option>tcl</option>
+                                <option>textile</option>
+                                <option>tiddlywiki</option>
+                                <option>tiki</option>
+                                <option>toml</option>
+                                <option>tornado</option>
+                                <option>troff</option>
+                                <option>ttcn</option>
+                                <option>ttcn-cfg</option>
+                                <option>turtle</option>
+                                <option>twig</option>
+                                <option>vb</option>
+                                <option>vbscript</option>
+                                <option>velocity</option>
+                                <option>verilog</option>
+                                <option>vhdl</option>
+                                <option>vue</option>
+                                <option>wast</option>
+                                <option>webidl</option>
+                                <option>xml</option>
+                                <option>xquery</option>
+                                <option>yacas</option>
+                                <option>yaml</option>
+                                <option>yaml-frontmatter</option>
+                                <option>z80</option>
+                            </select>
+                        </p>
+                        <div class="custom-switch">
+                            <input  onclick="toggleLineNumbers(this)" type="checkbox" id="ln" checked>
+                            <label for="ln">Line Numbers</label>
+                        </div>
+                        <div class="sidebar-divider"></div>
+                        <div class="custom-switch">
+                            <input onclick="toggleActiveLineFocus(this)" type="checkbox" id="alf">
+                            <label for="alf">Active Line Focus</label>
+                        </div>
+                        <div class="sidebar-divider"></div>
+                        <div class="custom-switch">
+                            <input onclick="toggleLW(this)" type="checkbox" checked id="lw">
+                            <label for="lw">Line Wrapping</label>
+                            </div>    <div class="sidebar-divider"></div>
+                            <div class="custom-switch">
+                                <input onclick="toggleACB(this)" type="checkbox" checked id="acb">
+                                <label for="acb">Auto Close Brackets</label>
+                            </div>
+                            <div class="sidebar-divider"></div>
+                            <div class="custom-switch">
+                                <input onclick="toggleFIG(this)" type="checkbox" id="fig">
+                                <label for="fig">Fold in Gutter</label>
+                            </div>
+                            <div class="sidebar-divider"></div>
+                            <div class="custom-switch">
+                                <input onclick="toggleHMW(this)" type="checkbox" checked id="hmw">
+                                <label for="hmw">Highlight Matching Word</label>
+                            </div>
+                            <div class="sidebar-divider"></div>
+                            <div class="custom-switch">
+                                <input onclick="toggleHMB(this)" type="checkbox" checked id="hmb">
+                                <label for="hmb">Highlight Matching Brackets</label>
+                            </div>
+                            <div class="sidebar-divider"></div>
+                            <div class="custom-switch">
+                                <input type="checkbox" id="bor" checked onclick="toggleBOR(this)">
+                                <label for="bor">Buttons on Right</label>
+                            </div>
+                            <div class="sidebar-divider"></div>
+                            <label for="scaleF">Image Scale</label>
+                            <input type="number" class="form-control form-control-sm" id="scaleF" value="5" /><br />
+                        </div>
+                    </div>
+                    <div class="content-wrapper">
+                        
+                        <div id="theme-moon" class="theme-icon p-0 m-0  bg-transparent" onclick="halfmoon.toggleDarkMode();hideMoon()">
+                            <img src="micons/moon.svg">
+                        </div>
+                        <div id="theme-sun" style="display: none" class="theme-icon p-0 m-0  bg-transparent" onclick='halfmoon.toggleDarkMode();hideSun()'>
+                            <img src="micons/lsun2.svg">
+                        </div>
+                        <h2 class=" w-full" style="text-align: center;margin-top:0px;width: inherit">code<span style="color:#45A3FB">Pic</span></h2>
+                        <div class="w-full  d-flex align-items-center justify-content-center">
+                            <button class="btn btn-primary btn-sm " onclick="saveCodePic()">Save Image</button>
+                            <button class="btn btn-primary btn-sm " onclick="saveText()">Save Code</button>
+                            <button class="btn btn-primary btn-sm " onclick="writeCB()">Copy Code</button>
+                        </div>
+                        <div class="w-full  d-flex align-items-center justify-content-center">
+                            <div class="content">
+                                <div id="codeParent">
+                                    <div class="codeContainer" id="codeContainer">
+                                        <div style="display: flex;">
+                                            <div class="button" id="buttons-left">
+                                                <div class="red"></div>
+                                                <div class="green"></div>
+                                                <div class="yellow"></div>
+                                            </div>
+                                            <input type="text" class="title" id="titleField" value="FileName.py">
+                                            <div class="button " id="buttons-right">
+                                                <div class="yellow"></div>
+                                                <div class="green"></div>
+                                                <div class="red"></div>
+                                            </div>
+                                        </div>
+                                        <div id="codeView"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div id="codeView"></div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-
-
-</body>
-
-<script src="mjs/index.js"></script>
-<script src="mjs/halfmoon.min.js"></script>
-
-</html>
+        </body>
+        <script src="mjs/index.js"></script>
+        <script src="mjs/halfmoon.min.js"></script>
+    </html>
