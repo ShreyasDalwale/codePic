@@ -39,6 +39,17 @@ var myCodeMirror = CodeMirror(codeView, {
     // gutters: ["CodeMirror-linenumbers"]
 });
 
+function changeLanguageMode(lang){
+    if (lang == "java") {lang = "text/x-java"}
+    else if (lang == "c") {lang = "text/x-csrc"}
+    else if (lang == "cpp") {lang = "text/x-c++src"}
+    else if (lang == "kotlin") {lang = "text/x-kotlin"}
+    else if (lang == "scala") {lang = "text/x-csrc"}
+    else if (lang == "ceylon") {lang = "text/x-ceylon"}
+    else if (lang == "objective-c") {lang = "text/x-objectivec"}
+    myCodeMirror.setOption("mode",lang);
+}
+
 function toggleLineNumbers(ib) {
     if (!ib.checked) {
         myCodeMirror.setOption("lineNumbers", false);
@@ -118,8 +129,14 @@ function toggleBOR(ib) {
 }
 
 
-var input = document.getElementById("select");
+var inputLang = document.getElementById("selectLang");
+function selectLanguage() {
+    var theme = inputLang.options[inputLang.selectedIndex].textContent;
+    myCodeMirror.setOption("mode", theme);
+}
 
+
+var input = document.getElementById("select");
 function selectTheme() {
     var theme = input.options[input.selectedIndex].textContent;
     myCodeMirror.setOption("theme", theme);
