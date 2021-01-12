@@ -1,11 +1,13 @@
 function hideSun() {
     document.getElementById('theme-sun').style.display = "none";
     document.getElementById('theme-moon').style.display = "";
+    document.getElementById('menuIcon').src = "micons/menu.svg";
 }
 
 function hideMoon() {
     document.getElementById('theme-sun').style.display = "";
     document.getElementById('theme-moon').style.display = "none";
+    document.getElementById('menuIcon').src = "micons/lmenu.svg";
 }
 var codeView = document.getElementById("codeView");
 // codeView.style.height = "100vh";

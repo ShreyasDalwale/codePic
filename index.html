@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>codePic - Shreyas</title>
+    <title>codePic - Shreyas Dalwale</title>
 
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Create awesome images of your code with codePic.">
+    <meta name="author" content="Shreyas Dalwale">
 
     <!-- Core -->
     <link rel="stylesheet" href="lib/codemirror.css">
@@ -212,13 +212,25 @@
         }
 
         .menu-icon {
-            border-radius: 0px 100px 100px 0px;
-            width: 50px;
-            height: 40px;
+            border-radius:50%;
+          /*  width: 40px;
+            height: 40px;*/
+            margin: 0vh 0 0 10px;
+            position: absolute;
+            background: #ff0;
+            border: none;
+            z-index: 5;
+
+        }
+        .meu-icon:focus{
+            border: none;
+
         }
 
         .menu-icon>img {
-            height: inherit;
+            border: none;   
+            position: inherit;
+            border-radius: 50%
         }
 
         .theme-icon {
@@ -249,11 +261,20 @@
 
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-mode-theme-onload="false">
 
+    <div class="menu-icon" onclick="halfmoon.toggleSidebar()">
+        <img id="menuIcon" src="micons/menu.svg">
+    </div>
+
+
     <div class="page-wrapper with-sidebar " data-sidebar-type="overlayed-sm-and-down">
 
 
         <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
         <div class="sidebar">
+            <div class="menu-icon" style="margin: 10px 0 0 315px" onclick="halfmoon.toggleSidebar()">
+                <img id="menuIcon" src="micons/close.svg">
+            </div>
+
             <div class="p-20">
                 <p>Select a theme
                     <select class="form-control form-control-sm " onchange="selectTheme()" id=select>
@@ -382,9 +403,8 @@
 
         <div class="content-wrapper">
 
-            <button class="menu-icon p-0 m-0 btn btn-sm btn-primary position-sticky" onclick="halfmoon.toggleSidebar()">
-                <img id="menuIcon" src="micons/lmenu.svg">
-            </button>
+            
+
             <div id="theme-moon" class="theme-icon p-0 m-0  bg-transparent" onclick="halfmoon.toggleDarkMode();hideMoon()">
                 <img src="micons/moon.svg">
             </div>
@@ -393,7 +413,7 @@
                 <img src="micons/lsun2.svg">
             </div>
 
-            <h2 class=" w-full" style="text-align: center;margin-top:-45px;width: inherit">codePic</h2>
+            <h2 class=" w-full" style="text-align: center;margin-top:0px;width: inherit">code<span style="color:#45A3FB">Pic</span></h2>
 
 
             <div class="w-full  d-flex align-items-center justify-content-center">
