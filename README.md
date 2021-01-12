@@ -11,6 +11,7 @@
 - 62 Material Designed Custom Themes
 
 ## Open Source Projects used
-- [CodeMirror](https://github.com/codemirror/CodeMirror) is used to implement the Code Editor in the project.
-- [Halfmoon](https://github.com/halfmoonui/halfmoon) is the css-framework behind the website.
-
+- [CodeMirror](https://github.com/codemirror/CodeMirror)
+- [Halfmoon](https://github.com/halfmoonui/halfmoon) 
+- [html2canvas](https://github.com/niklasvh/html2canvas)
+- [FileSaver](https://github.com/eligrey/FileSaver.js/) 
